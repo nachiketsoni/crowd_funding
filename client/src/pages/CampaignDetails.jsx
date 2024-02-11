@@ -13,11 +13,16 @@ const CampaignDetails = () => {
   const { donate, getDonations, contract, address, connect} = useStateContext();
   const { state } = useLocation();
   const handleDonate = async () => {
-    if (!address) connect();
-    setLoading(true);
-    await donate(state.id, amount);
-    setLoading(false);
-    navigate("/");
+    try {
+      
+      if (!address) connect();
+      setLoading(true);
+      await donate(state.id, amount);
+      setLoading(false);
+      navigate("/");
+    } catch (error) {
+      alert("Error")
+    }
   };
   const fetchDonators = async () => {
     const data = await getDonations(state.id);
