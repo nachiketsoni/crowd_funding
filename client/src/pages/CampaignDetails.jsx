@@ -22,7 +22,7 @@ const CampaignDetails = () => {
       navigate("/");
     } catch (error) {
       setLoading(false);
-      alert("Error")
+      alert(("Transaction Failed" , error))
     }
   };
   const fetchDonators = async () => {
