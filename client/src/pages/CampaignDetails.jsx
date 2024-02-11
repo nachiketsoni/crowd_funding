@@ -21,6 +21,7 @@ const CampaignDetails = () => {
       setLoading(false);
       navigate("/");
     } catch (error) {
+      setLoading(false);
       alert("Error")
     }
   };
