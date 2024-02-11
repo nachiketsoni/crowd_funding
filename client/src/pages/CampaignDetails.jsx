@@ -10,7 +10,7 @@ const CampaignDetails = () => {
   const [isLoading, setLoading] = useState(false);
   const [amount, setAmount] = useState("");
   const [donators, setDonators] = useState([]);
-  const { donate, getDonations, contract, address } = useStateContext();
+  const { donate, getDonations, contract, address, connect} = useStateContext();
   const { state } = useLocation();
   const handleDonate = async () => {
     if (!address) connect();
